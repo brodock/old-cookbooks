@@ -1,0 +1,12 @@
+This is My Cookbooks focused on configuring and deploying
+applications on Ubuntu Linux 12.04 LTS
+
+For Ruby on Rails applications I've decided to use RVM to be able to easily
+update Ruby versions when needed and also to help isolate using gemsets,
+older applications that doesn't use Bundler yet.
+
+For web servers, nginx is my prefered choice as it's faster then any other, 
+lightweight and powerfull enought for all my needs.
+
+To deploy and manage Ruby on Rails application I decided to stay with Passenger
+until I find that anything Unicorn or similars offers are a must for a project.
