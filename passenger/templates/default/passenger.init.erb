@@ -20,6 +20,7 @@ NAME=passenger
 DAEMON=<%= "#{@nginx_path}/sbin/nginx" %>
 PIDFILE=<%= @pidfile %>
 SCRIPTNAME=/etc/init.d/$NAME
+CONFIG_FILE=<%= "#{@nginx_path}/conf/nginx.conf" %>
 
 # Exit if the package is not installed
 [ -x "$DAEMON" ] || exit 0
@@ -39,7 +40,7 @@ SCRIPTNAME=/etc/init.d/$NAME
 #
 do_start()
 {
-        $DAEMON -t 1> /dev/null 2> /dev/null || return 2
+        $DAEMON -t -c $CONFIG_FILE 1> /dev/null 2> /dev/null || return 2
         $DAEMON
         #ps x | grep "ngin[x]: master" | awk '{print $1}' > $PIDFILE
 }
@@ -49,14 +50,14 @@ do_start()
 #
 do_stop()
 {
-        $DAEMON -s stop
+        $DAEMON -s stop -c $CONFIG_FILE
 }
 
 #
 # Function that sends a SIGHUP to the daemon/service
 #
 do_reload() {
-        $DAEMON -s reload
+        $DAEMON -s reload -c $CONFIG_FILE
 }
 
 case "$1" in
