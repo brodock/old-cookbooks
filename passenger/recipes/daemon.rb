@@ -19,6 +19,8 @@ if ['ubuntu', 'debian'].member? node[:platform]
 end
 
 nginx_path = node[:passenger][:production][:path]
+pid_path = node[:passenger][:production][:pid_path]
+log_path = node[:passenger][:production][:log_path]
 
 bash "install passenger/nginx" do
   user "root"
@@ -40,19 +42,9 @@ bash "install passenger/nginx from rvm" do
   only_if "test -e /usr/local/rvm"
 end
 
-log_path = node[:passenger][:production][:log_path]
-
 directory log_path do
   mode 0755
   action :create
-end
-
-directory "#{nginx_path}/logs" do
-  mode 0755
-  action :create
-  recursive true
-  owner "nobody"
-  group "root"
 end
 
 directory "#{nginx_path}/conf/conf.d" do
@@ -96,7 +88,7 @@ template "#{nginx_path}/conf/nginx.conf.unpatched" do
     :passenger_root => "##PASSENGER_ROOT##",
     :ruby_path => "##RUBY_PATH##",
     :passenger => node[:passenger][:production],
-    :pidfile => "#{nginx_path}/logs/nginx.pid"
+    :pidfile => "#{pid_path}/nginx.pid"
   )
   notifies :run, 'bash[config_patch]'
 end
@@ -107,7 +99,7 @@ template "/etc/init.d/passenger" do
   group "root"
   mode 0755
   variables(
-    :pidfile => "#{nginx_path}/logs/nginx.pid",
+    :pidfile => "#{pid_path}/nginx.pid",
     :nginx_path => nginx_path
   )
 end
@@ -123,9 +115,9 @@ service "passenger" do
   service_name "passenger"
   enabled true
   running true
-  reload_command "if [ -e #{nginx_path}/logs/nginx.pid ]; then #{nginx_path}/sbin/nginx -s reload; fi"
+  reload_command "if [ -e #{pid_path}/nginx.pid ]; then #{nginx_path}/sbin/nginx -s reload; fi"
   start_command "#{nginx_path}/sbin/nginx"
-  stop_command "if [ -e #{nginx_path}/logs/nginx.pid ]; then #{nginx_path}/sbin/nginx -s stop; fi"
+  stop_command "if [ -e #{pid_path}/nginx.pid ]; then #{nginx_path}/sbin/nginx -s stop; fi"
   status_command "curl http://localhost/nginx_status"
   supports [ :start, :stop, :reload, :status, :enable ]
   action [ :enable, :start ]
@@ -135,6 +127,6 @@ end
 include_recipe "logrotate"
 
 logrotate_app "passenger" do
-  path "#{node[:passenger][:production][:log_path]}/*.log #{node[:passenger][:production][:log_path]}/*/*.log"
+  path "#{log_path}/*.log #{log_path}/*/*.log"
   rotate 12
 end

@@ -1,5 +1,5 @@
-#user  nobody;
-worker_processes  5;
+user  www-data;
+worker_processes <%= @passenger[:worker_processes] %>;
 error_log  <%= @log_path %>/error.log;
 pid <%= @pidfile %>;
 
