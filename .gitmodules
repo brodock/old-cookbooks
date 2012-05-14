@@ -4,3 +4,9 @@
 [submodule "ubuntu"]
 	path = ubuntu
 	url = git://github.com/brodock/chef-ubuntu.git
+[submodule "git"]
+	path = git
+	url = git://github.com/opscode-cookbooks/git.git
+[submodule "runit"]
+	path = runit
+	url = git://github.com/opscode-cookbooks/runit.git
