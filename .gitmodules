@@ -10,3 +10,6 @@
 [submodule "runit"]
 	path = runit
 	url = git://github.com/opscode-cookbooks/runit.git
+[submodule "apt"]
+	path = apt
+	url = git://github.com/opscode-cookbooks/apt.git
