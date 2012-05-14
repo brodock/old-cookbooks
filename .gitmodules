@@ -1,3 +1,6 @@
 [submodule "rvm"]
 	path = rvm
 	url = git://github.com/fnichol/chef-rvm.git
+[submodule "ubuntu"]
+	path = ubuntu
+	url = git://github.com/brodock/chef-ubuntu.git
