@@ -19,3 +19,6 @@
 [submodule "logrotate"]
 	path = logrotate
 	url = git://github.com/opscode-cookbooks/logrotate.git
+[submodule "vim"]
+	path = vim
+	url = git://github.com/opscode-cookbooks/vim.git
