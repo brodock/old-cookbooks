@@ -24,7 +24,7 @@
 	url = git://github.com/opscode-cookbooks/vim.git
 [submodule "nginx"]
 	path = nginx
-	url = git://github.com/opscode-cookbooks/nginx.git
+	url = git://github.com/brodock/chef-nginx.git
 [submodule "apache2"]
 	path = apache2
 	url = git://github.com/opscode-cookbooks/apache2.git
@@ -34,3 +34,24 @@
 [submodule "ohai"]
 	path = ohai
 	url = git://github.com/opscode-cookbooks/ohai.git
+[submodule "webapp"]
+	path = webapp
+	url = git://github.com/brodock/chef-webapp.git
+[submodule "imagemagick"]
+	path = imagemagick
+	url = git://github.com/opscode-cookbooks/imagemagick.git
+[submodule "mysql"]
+	path = mysql
+	url = git://github.com/opscode-cookbooks/mysql.git
+[submodule "stompserver"]
+	path = stompserver
+	url = git://github.com/opscode-cookbooks/stompserver.git
+[submodule "gitorious"]
+	path = gitorious
+	url = git://github.com/brodock/chef-gitorious.git
+[submodule "user"]
+	path = user
+	url = git://github.com/fnichol/chef-user.git
+[submodule "openssl"]
+	path = openssl
+	url = git://github.com/opscode-cookbooks/openssl.git
