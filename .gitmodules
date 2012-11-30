@@ -22,3 +22,6 @@
 [submodule "vim"]
 	path = vim
 	url = git://github.com/opscode-cookbooks/vim.git
+[submodule "chef-client"]
+	path = chef-client
+	url = git://github.com/opscode-cookbooks/chef-client.git
