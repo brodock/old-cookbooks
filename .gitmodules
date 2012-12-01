@@ -25,9 +25,3 @@
 [submodule "chef-client"]
 	path = chef-client
 	url = git://github.com/opscode-cookbooks/chef-client.git
-[submodule "dmg"]
-	path = dmg
-	url = git://github.com/opscode-cookbooks/dmg.git
-[submodule "yum"]
-	path = yum
-	url = git://github.com/opscode-cookbooks/yum.git
