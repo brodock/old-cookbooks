@@ -25,3 +25,9 @@
 [submodule "chef-client"]
 	path = chef-client
 	url = git://github.com/opscode-cookbooks/chef-client.git
+[submodule "dpkg_packages"]
+	path = dpkg_packages
+	url = git://github.com/brodock/chef-dpkg_packages.git
+[submodule "brightbox"]
+	path = brightbox
+	url = git://github.com/brodock/chef-brightbox.git
