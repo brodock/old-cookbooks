@@ -31,3 +31,6 @@
 [submodule "brightbox"]
 	path = brightbox
 	url = git://github.com/brodock/chef-brightbox.git
+[submodule "ohai"]
+	path = ohai
+	url = git://github.com/opscode-cookbooks/ohai.git
