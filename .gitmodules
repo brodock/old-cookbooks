@@ -40,3 +40,6 @@
 [submodule "user"]
 	path = user
 	url = git://github.com/fnichol/chef-user.git
+[submodule "mysql"]
+	path = mysql
+	url = git://github.com/brodock/mysql.git
