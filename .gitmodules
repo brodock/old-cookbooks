@@ -34,3 +34,6 @@
 [submodule "ohai"]
 	path = ohai
 	url = git://github.com/opscode-cookbooks/ohai.git
+[submodule "imagemagick"]
+	path = imagemagick
+	url = git://github.com/opscode-cookbooks/imagemagick.git
