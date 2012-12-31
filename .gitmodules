@@ -37,3 +37,6 @@
 [submodule "imagemagick"]
 	path = imagemagick
 	url = git://github.com/opscode-cookbooks/imagemagick.git
+[submodule "user"]
+	path = user
+	url = git://github.com/fnichol/chef-user.git
