@@ -43,3 +43,6 @@
 [submodule "mysql"]
 	path = mysql
 	url = git://github.com/brodock/mysql.git
+[submodule "redis"]
+	path = redis
+	url = git://github.com/phlipper/chef-redis.git
