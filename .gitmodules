@@ -46,3 +46,9 @@
 [submodule "redis"]
 	path = redis
 	url = git://github.com/phlipper/chef-redis.git
+[submodule "collectd"]
+	path = collectd
+	url = git://github.com/linohh/chef-collectd.git
+[submodule "collectd_plugins"]
+	path = collectd_plugins
+	url = git://github.com/coderanger/chef-collectd_plugins.git
